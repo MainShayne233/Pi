@@ -51,7 +51,7 @@ def backwardleft(tf):
         time.sleep(tf)
         gpio.cleanup()
 
-def backwardright(tf):ø
+def backwardright(tf):
         gpio.output(7, 0)
         gpio.output(11, 0)
         gpio.output(13, 1)
