@@ -60,6 +60,7 @@ def backwardright(tf):
         gpio.cleanup()
 
 def pivotleft(tf):
+	print "pivotleft"
 	gpio.output(7, 1)
 	gpio.output(11, 0)
 	gpio.output(13, 0)
