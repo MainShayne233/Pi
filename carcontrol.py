@@ -59,22 +59,6 @@ def backwardright(tf):
     time.sleep(tf)
     gpio.cleanup()
 
-def pivotleft(tf):
-	pio.output(7, 1)
-    gpio.output(11, 0)
-    gpio.output(13, 0)
-    gpio.output(15, 1)
-    time.sleep(tf)
-    gpio.cleanup()
-
-def pivotright(tf):
-	pio.output(7, 0)
-    gpio.output(11, 1)
-    gpio.output(13, 1)
-    gpio.output(15, 0)
-    time.sleep(tf)
-    gpio.cleanup()
-
 def key_input(event):
 	init()
 	print 'Key: ', event.char
@@ -89,8 +73,8 @@ def key_input(event):
 		forwardleft(sleep_time)
 	elif key_press.lower() == 'd':
 		forwardright(sleep_time)
-	elif key_press.lower() == 'q':
-		pivotleft(sleep_time)
+	#elif key_press.lower() == 'q':
+		#pivotleft(sleep_time)
 	#elif key_press.lower() == 'e':
 		#pivotright(sleep_time)
 
