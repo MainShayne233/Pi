@@ -51,7 +51,7 @@ def backwardleft(tf):
         time.sleep(tf)
         gpio.cleanup()
 
-def backwardright(tf):
+def backwardright(tf):ø
         gpio.output(7, 0)
         gpio.output(11, 0)
         gpio.output(13, 1)
@@ -65,7 +65,8 @@ def pivotleft(tf):
 	gpio.output(11, 0)
 	gpio.output(13, 0)
 	gpio.output(15, 1)
-	time.sleep(0.5)
+	time.sleep(tf)
+	gpio.cleanup()
 
 def key_input(event):
 	init()
