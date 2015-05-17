@@ -23,41 +23,57 @@ def reverse(tf):
 	gpio.output(7, 1)
 	gpio.output(11, 0)
 	gpio.output(13, 1)
-        gpio.output(15, 0)
-        time.sleep(tf)
+    gpio.output(15, 0)
+    time.sleep(tf)
 	gpio.cleanup()
 
 def forwardright(tf):
 	gpio.output(7, 0)
-        gpio.output(11, 1)
-        gpio.output(13, 0)
-        gpio.output(15, 0)
-        time.sleep(tf)
-        gpio.cleanup()
+    gpio.output(11, 1)
+    gpio.output(13, 0)
+    gpio.output(15, 0)
+    time.sleep(tf)
+    gpio.cleanup()
 
 def forwardleft(tf):
-        gpio.output(7, 0)
-        gpio.output(11, 0)
-        gpio.output(13, 0)
-        gpio.output(15, 1)
-        time.sleep(tf)
-        gpio.cleanup()
+    gpio.output(7, 0)
+    gpio.output(11, 0)
+    gpio.output(13, 0)
+    gpio.output(15, 1)
+    time.sleep(tf)
+    gpio.cleanup()
 
 def backwardleft(tf):
-        gpio.output(7, 1)
-        gpio.output(11, 0)
-        gpio.output(13, 0)
-        gpio.output(15, 0)
-        time.sleep(tf)
-        gpio.cleanup()
+    gpio.output(7, 1)
+    gpio.output(11, 0)
+    gpio.output(13, 0)
+    gpio.output(15, 0)
+    time.sleep(tf)
+    gpio.cleanup()
 
 def backwardright(tf):
-        gpio.output(7, 0)
-        gpio.output(11, 0)
-        gpio.output(13, 1)
-        gpio.output(15, 0)
-        time.sleep(tf)
-        gpio.cleanup()
+    gpio.output(7, 0)
+    gpio.output(11, 0)
+    gpio.output(13, 1)
+    gpio.output(15, 0)
+    time.sleep(tf)
+    gpio.cleanup()
+
+def pivotleft(tf):
+	pio.output(7, 1)
+    gpio.output(11, 0)
+    gpio.output(13, 0)
+    gpio.output(15, 1)
+    time.sleep(tf)
+    gpio.cleanup()
+
+def pivotright(tf):
+	pio.output(7, 0)
+    gpio.output(11, 1)
+    gpio.output(13, 1)
+    gpio.output(15, 0)
+    time.sleep(tf)
+    gpio.cleanup()
 
 def key_input(event):
 	init()
@@ -73,6 +89,10 @@ def key_input(event):
 		forwardleft(sleep_time)
 	elif key_press.lower() == 'd':
 		forwardright(sleep_time)
+	elif key_press.lower() == 'q':
+		pivotleft(sleep_time)
+	elif key_press.lower() == 'e':
+		pivotright(sleep_time)
 
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
