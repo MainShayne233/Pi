@@ -61,7 +61,7 @@ def backwardright(tf):
 
 def pivotleft(tf):
 	gpio.output(7, 0)
-	gpio.output(11, 0)
+	gpio.output(11, 1)
 	gpio.output(13, 1)
 	gpio.output(15, 0)
 	time.sleep(tf)
