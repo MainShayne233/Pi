@@ -93,6 +93,10 @@ def key_input(event):
 		pivotleft(sleep_time)
 	elif key_press.lower() == 'e':
 		pivotright(sleep_time)
+	elif key_press.lower() == 'z':
+		backwardleft(sleep_time)
+	elif key_press.lower() == 'c':
+		backwardright(sleep_time)
 
 command = tk.Tk()
 command.bind('<KeyPress>', key_input)
